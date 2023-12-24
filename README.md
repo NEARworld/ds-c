@@ -6,7 +6,7 @@ The code is influenced by the book ['이것이 자료구조+알고리즘이다 w
 - [ ] Singly Linked List  
   - [x] [~AppendNode~](https://github.com/NEARworld/ds-c/blob/3781c706b10897fcba8d49c15b1fb220661e4930/LinkedList/main.c#L23-L33)
   - [x] ~DestroyNode~
-  - [x] ~CreateNode~
+  - [x] [~CreateNode~](https://github.com/NEARworld/ds-c/blob/3781c706b10897fcba8d49c15b1fb220661e4930/LinkedList/main.c#L10-L17)
   - [ ] Traverse
   - [ ] InsertNode
 - [ ] Doubly Linked List
