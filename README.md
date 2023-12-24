@@ -4,9 +4,9 @@ The code is influenced by the book ['이것이 자료구조+알고리즘이다 w
 
 ## Linked List  
 - [ ] Singly Linked List  
-  - [x] AppendNode
-  - [x] DestroyNode
-  - [x] CreateNode
+  - [x] ~AppendNode~
+  - [x] ~DestroyNode~
+  - [x] ~CreateNode~
   - [ ] Traverse
   - [ ] InsertNode
 - [ ] Doubly Linked List
