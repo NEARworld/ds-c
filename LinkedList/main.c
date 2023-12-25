@@ -36,11 +36,26 @@ Node* GetNodeAt(Node* Head, int Location) {
     Node* Current = Head;
 
     while (Current != NULL && (--Location) >= 0) {
-        printf("Location: %d\n", Location);
         Current = (*Current).NextNode;
     }
-    printf("here\n");
     return Current;
+}
+
+Node* RemoveNode(Node** Head, Node* Target) {
+    if (*Head == Target) {
+        *Head = (*Head)->NextNode;
+        return Target;
+    }    
+
+    Node* Current = *Head;
+    
+    while (Current != NULL && Current->NextNode != Target) {
+        Current = (*Current).NextNode;
+    }
+
+    (Current)->NextNode = Target->NextNode;
+
+    return Target;
 }
 
 int main() {
@@ -48,11 +63,14 @@ int main() {
 
     SLL_AppendNode(&List, SLL_CreateNode(10));
     SLL_AppendNode(&List, SLL_CreateNode(100));
+    SLL_AppendNode(&List, SLL_CreateNode(1000));
 
-    printf("Data is %d\n", List->Data);
-    printf("hello world!\n");
-    Node* MyNode = GetNodeAt(List, 1);
-    printf("MyNode: %d\n", MyNode->Data);
+    Node* MyNode = GetNodeAt(List, 0);
+
+    Node* RemovedNode = RemoveNode(&List, MyNode);
+    SLL_DestroyNode(RemovedNode);
+
+    printf("Head Data: %d\n", List->Data);
 
     return 0;
 }
