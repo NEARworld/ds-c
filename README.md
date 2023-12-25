@@ -9,5 +9,7 @@ The code is influenced by the book ['이것이 자료구조+알고리즘이다 w
   - [x] [~CreateNode~](https://github.com/NEARworld/ds-c/blob/3781c706b10897fcba8d49c15b1fb220661e4930/LinkedList/main.c#L10-L17)
   - [ ] Traverse
   - [ ] InsertNode
+  - [x] [~GetNodeAt~](https://github.com/NEARworld/ds-c/blob/7de213ac851b7be447f68bb80a5dc7fc8986b57d/LinkedList/main.c#L35-L42)
+  - [x] [~RemoveNode~](https://github.com/NEARworld/ds-c/blob/7de213ac851b7be447f68bb80a5dc7fc8986b57d/LinkedList/main.c#L44-L59)
 - [ ] Doubly Linked List
 - [ ] Circular Linked List
