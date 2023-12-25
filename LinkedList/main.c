@@ -65,6 +65,17 @@ void InsertNodeAfter(Node* Current, Node* NewNode) {
     Current->NextNode = NewNode;
 }
 
+void Traverse(Node* Head) {
+    if (Head == NULL) return;
+
+    Node* Current = Head;
+
+    while (Current != NULL) {
+        printf("%d ", Current->Data);
+        Current = Current->NextNode;
+    }
+
+}
 int main() {
     Node* List = NULL;
 
@@ -80,6 +91,7 @@ int main() {
 
     InsertNodeAfter(List, SLL_CreateNode(500));
     // List: [100, 500, 1000]
-
+    Traverse(List);
+    
     return 0;
 }
