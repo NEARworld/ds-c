@@ -45,14 +45,13 @@ Node* GetNodeAt(Node* Head, int Location) {
 
 int main() {
     Node* List = NULL;
-    Node* NewNode = NULL;
-    NewNode = SLL_CreateNode(117);
 
-    SLL_AppendNode(&List, NewNode);
+    SLL_AppendNode(&List, SLL_CreateNode(10));
+    SLL_AppendNode(&List, SLL_CreateNode(100));
 
     printf("Data is %d\n", List->Data);
     printf("hello world!\n");
-    Node* MyNode = GetNodeAt(List, 0);
+    Node* MyNode = GetNodeAt(List, 1);
     printf("MyNode: %d\n", MyNode->Data);
 
     return 0;
