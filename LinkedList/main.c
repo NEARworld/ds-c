@@ -32,6 +32,16 @@ void SLL_AppendNode(Node** Head, Node* NewNode) {
     }
 }
 
+Node* GetNodeAt(Node* Head, int Location) {
+
+    while (Head != NULL && (--Location) >= 0) {
+        printf("Location: %d\n", Location);
+        Head = (*Head).NextNode;
+    }
+    printf("here\n");
+    return Head;
+}
+
 int main() {
     Node* List = NULL;
     Node* NewNode = NULL;
@@ -39,7 +49,10 @@ int main() {
 
     SLL_AppendNode(&List, NewNode);
 
-    printf("%d\n", List->Data);
+    printf("Data is %d\n", List->Data);
+    printf("hello world!\n");
+    Node* MyNode = GetNodeAt(List, 0);
+    printf("MyNode: %d\n", MyNode->Data);
 
     return 0;
 }
