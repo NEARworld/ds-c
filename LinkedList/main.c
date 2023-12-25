@@ -58,6 +58,13 @@ Node* RemoveNode(Node** Head, Node* Target) {
     return Target;
 }
 
+void InsertNodeAfter(Node* Current, Node* NewNode) {
+    if (Current == NULL || Current == NewNode) return;
+
+    NewNode->NextNode = Current->NextNode;
+    Current->NextNode = NewNode;
+}
+
 int main() {
     Node* List = NULL;
 
@@ -69,8 +76,10 @@ int main() {
 
     Node* RemovedNode = RemoveNode(&List, MyNode);
     SLL_DestroyNode(RemovedNode);
+    // List: [100, 1000]
 
-    printf("Head Data: %d\n", List->Data);
+    InsertNodeAfter(List, SLL_CreateNode(500));
+    // List: [100, 500, 1000]
 
     return 0;
 }
