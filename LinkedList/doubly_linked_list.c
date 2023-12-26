@@ -20,6 +20,16 @@ Node* CreateNode(int Data) {
     return NewNode;    
 }
 
+Node* GetNodeAt(Node* Head, int Location) {
+    Node* Current = Head;
+
+    while(Current != NULL && (--Location) >= 0) {
+        Current = Current->NextNode;
+    }
+
+    return Current;
+}
+
 void AppendNode(Node** Head, Node* NewNode) {
     if (*Head == NULL) {
         *Head = NewNode;
@@ -43,4 +53,5 @@ int main() {
 
     printf("first: %d\n", List->NextNode->PrevNode->Data);
     printf("second: %d\n", List->NextNode->Data);
+    printf("Node Data at index 1: %d\n", GetNodeAt(List, 1)->Data);
 }
