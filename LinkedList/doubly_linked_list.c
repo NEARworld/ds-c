@@ -16,9 +16,27 @@ Node* CreateNode(int Data) {
     return NewNode;    
 }
 
+void AppendNode(Node** Head, Node* NewNode) {
+    if (*Head == NULL) {
+        *Head = NewNode;
+        return;
+    }
+
+    Node* Tail = *Head;
+
+    while(Tail->NextNode != NULL) {
+        Tail = Tail->NextNode;
+    }
+    Tail->NextNode = NewNode;
+    NewNode->PrevNode = Tail;
+}
+
 int main() {
     Node* List = NULL;
-    Node* MyNode = CreateNode(10);
 
-    printf("%d\n", MyNode->Data);
+    AppendNode(&List, CreateNode(10));
+    AppendNode(&List, CreateNode(100));
+
+    printf("first: %d\n", List->NextNode->PrevNode->Data);
+    printf("second: %d\n", List->NextNode->Data);
 }
