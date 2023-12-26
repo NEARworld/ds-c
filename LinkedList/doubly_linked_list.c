@@ -7,6 +7,10 @@ typedef struct tagNode {
     struct tagNode* NextNode;
 } Node;
 
+void DestroyNode(Node* Node) {
+    free(Node);
+}
+
 Node* CreateNode(int Data) {
     Node* NewNode = (Node*)malloc(sizeof(Node));
     NewNode->Data = Data;
