@@ -45,13 +45,38 @@ void AppendNode(Node** Head, Node* NewNode) {
     NewNode->PrevNode = Tail;
 }
 
+Node* RemoveNode(Node** Head, Node* Target) {
+    Node* Current = *Head;
+
+    while (Current->NextNode != NULL && Current != Target) {
+        Current = Current->NextNode;
+    }
+
+    if (Current->PrevNode != NULL) {
+        Current->NextNode->PrevNode = Target->PrevNode;
+        Current->PrevNode->NextNode = Current->NextNode;
+    } else {
+        Current = NULL;
+    }
+    return Target;
+
+}
+
 int main() {
     Node* List = NULL;
 
     AppendNode(&List, CreateNode(10));
     AppendNode(&List, CreateNode(100));
+    AppendNode(&List, CreateNode(1000));
 
     printf("first: %d\n", List->NextNode->PrevNode->Data);
     printf("second: %d\n", List->NextNode->Data);
     printf("Node Data at index 1: %d\n", GetNodeAt(List, 1)->Data);
+
+    Node* RemovedNode = RemoveNode(&List, List->NextNode);
+    DestroyNode(RemovedNode);
+    
+    printf("Second Node data: %d\n", List->NextNode->Data);
+
+
 }
