@@ -62,6 +62,24 @@ Node* RemoveNode(Node** Head, Node* Target) {
 
 }
 
+void Traverse(Node* Head) {
+    Node* Current = Head;
+
+    while (Current != NULL) {
+        printf("%d\n", Current->Data);
+        Current = Current->NextNode;
+    }
+}
+
+void InsertAfter(Node* Current, Node* NewNode) {
+    if (Current != NULL && NewNode != NULL) {
+        NewNode->NextNode = Current->NextNode;
+        NewNode->PrevNode = Current;
+        Current->NextNode->PrevNode = NewNode;
+        Current->NextNode = NewNode;
+    }
+}
+
 int main() {
     Node* List = NULL;
 
@@ -75,8 +93,9 @@ int main() {
 
     Node* RemovedNode = RemoveNode(&List, List->NextNode);
     DestroyNode(RemovedNode);
-    
+
     printf("Second Node data: %d\n", List->NextNode->Data);
 
-
+    InsertAfter(List->NextNode, CreateNode(10000));
+    Traverse(List);
 }
