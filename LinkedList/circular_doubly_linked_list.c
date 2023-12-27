@@ -21,6 +21,7 @@ void AppendNode(Node** Head, Node* NewNode) {
     Tail->NextNode = NewNode;
     NewNode->PrevNode = Tail;
     NewNode->NextNode = *Head;
+    (*Head)->PrevNode = NewNode;
 }
 
 Node* CreateNode(int Data) {
@@ -39,6 +40,7 @@ int main() {
     AppendNode(&List, CreateNode(100));
 
     printf("%d\n", List->NextNode->NextNode->NextNode->Data);
+    printf("%d\n", List->PrevNode->PrevNode->Data);
 
     return 0;
 }
