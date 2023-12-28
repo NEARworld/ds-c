@@ -1,10 +1,8 @@
 typedef struct tagNode {
-    int Capacity;
-    int Top;
-    Node* Nodes;
+    int Data;
 } Node;
 
 int main() {
-    
+
     return 0;
 }
