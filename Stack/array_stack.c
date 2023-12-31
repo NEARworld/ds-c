@@ -53,5 +53,8 @@ int main() {
 
     printf("top: %d, capacity: %d\n", Stack->Top ,Stack->Capacity);
 
+    free(Stack->Nodes);
+    free(Stack);
+
     return 0;
 }
