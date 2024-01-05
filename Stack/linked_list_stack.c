@@ -8,7 +8,6 @@
 // gcc linked_list_stack.o ../LinkedList/singly_linked_list.o -o program
 
 typedef struct tagLinkedListStack {
-    int top;
     Node* Node;
 } LinkedListStack;
 
