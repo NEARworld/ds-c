@@ -76,22 +76,3 @@ void Traverse(Node* Head) {
     }
 
 }
-int main() {
-    Node* List = NULL;
-
-    SLL_AppendNode(&List, SLL_CreateNode(10));
-    SLL_AppendNode(&List, SLL_CreateNode(100));
-    SLL_AppendNode(&List, SLL_CreateNode(1000));
-
-    Node* MyNode = GetNodeAt(List, 0);
-
-    Node* RemovedNode = RemoveNode(&List, MyNode);
-    SLL_DestroyNode(RemovedNode);
-    // List: [100, 1000]
-
-    InsertNodeAfter(List, SLL_CreateNode(500));
-    // List: [100, 500, 1000]
-    Traverse(List);
-    
-    return 0;
-}
