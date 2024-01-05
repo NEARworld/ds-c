@@ -27,6 +27,16 @@ void Push(Node** Stack, int Data) {
     *Stack = NewNode;
 }
 
+void Pop(Node** Stack) {
+    if (*Stack == NULL) {
+        printf("Empty Stack");
+        return;
+    }
+    Node* PoppedNode = *Stack;
+    *Stack = (*Stack)->NextNode;
+    free(PoppedNode);
+}
+
 int main() {
     Node* list = NULL;
 
@@ -34,6 +44,8 @@ int main() {
     Push(&list, 20);
     Push(&list, 30);
     Push(&list, 40);
+
+    Pop(&list);
 
     Traverse(list);
     return 0;
